@@ -14,18 +14,16 @@ var longestCommonPrefix = function (strs) {
     return '';
   }
   let res = strs[0];
-  for (let i = 1; i < strs.length; i++) {
-    const str = strs[i];
-    let j = 0;
-    for (; j < str.length && j < res.length; j++) {
-      if (res[j] !== str[j]) {
+
+  for (let i = 0; i < strs.length; i++) {
+    let p = 0;
+    while (p < strs[i].length) {
+      if (res[p] !== strs[i][p]) {
         break;
       }
+      p++;
     }
-    res = res.substr(0, j);
-    if (res === '') {
-      return '';
-    }
+    res = res.substr(0, p);
   }
   return res;
 };

@@ -11,9 +11,6 @@
  * @return {number[]}
  */
 var intersect = function (nums1, nums2) {
-  // 解法二 双指针 先排序
-  // 如果指针指向的值相同，俩个指针同时后移一位。
-  // 如果不同，小的数的指针后移一位
   nums1 = nums1.sort((a, b) => a - b);
   nums2 = nums2.sort((a, b) => a - b);
   const res = [];
